@@ -9,7 +9,19 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        CAPSLock {
+            bindings = <&kp CAPS>;
+            key-positions = <5 6>;
+        };
+
+        Escape {
+            bindings = <&kp ESC>;
+            key-positions = <1 10>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -52,10 +64,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL        &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR_ALL  &trans  &trans    &trans    &bt BT_NXT    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &trans          &trans  &trans    &trans    &trans        &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                &kp LGUI  &trans    &kp SPACE     &kp RET    &trans     &kp RALT
+&trans  &kp TILDE       &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET      &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &bt BT_CLR_ALL  &trans  &trans    &trans    &bt BT_NXT    &kp MINUS      &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &trans
+&trans  &trans          &trans  &trans    &trans    &trans        &kp UNDER      &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &trans
+                                &trans    &trans    &kp SPACE     &kp BACKSPACE  &trans     &trans
             >;
         };
     };
